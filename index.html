@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lingvo – til o‘rganish markazi</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3f8;--sf:#fff;--ink:#14213d;--mu:#52607a;--bl:#2347f5;--ob:#fff;--le:#ffd84d;--mi:#bdebd3;--ln:#cdd8e6;--hd:'Bricolage Grotesque',system-ui,sans-serif;--bd:'Manrope',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1830;--sf:#18233f;--ink:#eef3fb;--mu:#a3b0c8;--bl:#7b93ff;--ob:#0f1830;--mi:#2b5c4a;--ln:#2c3a5c}}
+:root[data-theme="dark"]{--bg:#0f1830;--sf:#18233f;--ink:#eef3fb;--mu:#a3b0c8;--bl:#7b93ff;--ob:#0f1830;--mi:#2b5c4a;--ln:#2c3a5c}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--bd);overflow-x:hidden}
+h1,h2,h3{font-family:var(--hd);line-height:1.1;margin:0}
+.w{max-width:1040px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:12px}
+.logo{font:800 24px var(--hd);text-decoration:none;color:inherit}
+nav{display:flex;align-items:center;gap:18px}
+nav a{text-decoration:none;font-weight:600;color:var(--mu)}
+.btn{display:inline-block;background:var(--bl);color:var(--ob);border:0;border-radius:999px;padding:13px 26px;font:700 17px var(--bd);cursor:pointer;text-decoration:none}
+.btn.s{padding:8px 16px;font-size:15px}
+.btn.o{background:transparent;color:var(--ink);border:2px solid var(--ln)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:40px 0 56px}
+.hero h1{font-size:clamp(38px,7vw,68px);font-weight:800;letter-spacing:-.02em}
+.type{font:800 clamp(28px,5vw,44px) var(--hd);color:var(--bl);min-height:1.3em;margin:14px 0}
+.type:after{content:"|";animation:bk 1s steps(1) infinite}
+@keyframes bk{50%{opacity:0}}
+.hero p{color:var(--mu);max-width:46ch;margin:0 0 24px}
+.bs{position:relative;height:320px}
+.bub{position:absolute;padding:16px 24px;border-radius:26px 26px 26px 6px;font:800 clamp(22px,4vw,32px) var(--hd);color:#14213d;box-shadow:0 2px 0 var(--ink);animation:fl 5s ease-in-out infinite;transition:transform .4s}
+.bub:hover{transform:rotate(-8deg) scale(1.08)}
+.bub small{display:block;font:600 13px var(--bd);opacity:.75}
+.b1{background:var(--le);top:0;left:0}
+.b2{background:var(--mi);color:var(--ink);top:90px;right:0;border-radius:26px 26px 6px 26px;animation-delay:-1.5s}
+.b3{background:#c8d3ff;top:190px;left:30px;animation-delay:-3s}
+.b4{background:var(--sf);color:var(--ink);top:260px;right:20px;border:2px solid var(--ln);box-shadow:none;animation-delay:-4s}
+@keyframes fl{50%{translate:0 -12px}}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:24px 0 48px}
+.stats b{display:block;font:800 clamp(32px,6vw,52px) var(--hd);color:var(--bl)}
+.stats span{color:var(--mu)}
+section{padding:56px 0;border-top:1px solid var(--ln)}
+h2{font-size:clamp(28px,5vw,42px);margin-bottom:10px}
+.ld{color:var(--mu);max-width:56ch;margin:0 0 26px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+.tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.tabs .btn{padding:8px 18px;font-size:15px}
+.tabs .btn:not(.on){background:transparent;color:var(--ink);border:2px solid var(--ln)}
+.test{background:var(--sf);border:2px solid var(--ink);border-radius:20px;padding:26px;max-width:640px;min-height:320px}
+.pg{height:8px;background:var(--ln);border-radius:8px;overflow:hidden;margin-bottom:18px}
+.pg i{display:block;height:100%;background:var(--bl);transition:width .3s}
+.q{font:700 22px/1.3 var(--hd);margin-bottom:14px}
+.opt{display:block;width:100%;text-align:left;background:var(--bg);color:var(--ink);border:2px solid var(--ln);border-radius:12px;padding:11px 16px;margin-bottom:10px;font:600 17px var(--bd);cursor:pointer}
+.opt:hover{border-color:var(--bl)}
+.opt.ok{background:var(--mi);border-color:var(--mi)}
+.opt.no{border-color:#d33}
+.rs{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.ring{width:130px;height:130px;position:relative}
+.ring svg{transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:10}
+.ring .tr{stroke:var(--ln)}
+.ring .fg{stroke:var(--bl);stroke-linecap:round;stroke-dasharray:283;stroke-dashoffset:283;transition:stroke-dashoffset 1.4s ease}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font:800 34px var(--hd)}
+.cert{margin-top:16px;border:3px double var(--bl);border-radius:14px;padding:18px;text-align:center}
+.cert h3{font-size:26px;color:var(--bl)}
+input,select{font:400 17px var(--bd);padding:11px 14px;border-radius:12px;border:2px solid var(--ln);background:var(--sf);color:var(--ink);max-width:100%}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cs{border-top:6px solid var(--bl);padding-top:16px}
+.cs:nth-child(2){border-color:var(--le)}.cs:nth-child(3){border-color:var(--mi)}
+.cs h3{font-size:24px;margin-bottom:6px}.cs p{color:var(--mu);margin:0 0 8px}
+.fl{perspective:800px;height:130px;cursor:pointer;border:0;background:none;padding:0;font:inherit;color:inherit}
+.fi{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.fl:hover .fi,.fl.on .fi,.fl:focus-visible .fi{transform:rotateY(180deg)}
+.fi>div{position:absolute;inset:0;backface-visibility:hidden;display:grid;place-items:center;text-align:center;border-radius:16px;padding:12px;font:700 20px var(--hd);background:var(--sf);border:2px solid var(--ln)}
+.fi>div+div{transform:rotateY(180deg);background:var(--le);color:#14213d;border-color:var(--le);font:600 16px var(--bd)}
+.g4{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{padding:10px 8px;border-bottom:1px solid var(--ln);text-align:left}
+.sp{font-weight:700;color:var(--bl)}
+.dw{background:var(--sf);border:2px solid var(--ink);border-radius:20px;padding:22px;max-width:480px}
+.dw h3{font-size:34px}
+.car{position:relative;max-width:640px;background:var(--sf);border-radius:20px;border:2px solid var(--ln);padding:26px;min-height:190px}
+.car blockquote{margin:0 0 10px;font:600 20px/1.4 var(--hd)}
+.car .sc{color:var(--bl);font-weight:700}
+.cn{display:flex;gap:10px;margin-top:12px}
+details{border-bottom:1px solid var(--ln);padding:14px 0;max-width:680px}
+summary{font-weight:700;cursor:pointer}
+details p{color:var(--mu);margin:8px 0 0}
+form{display:grid;gap:12px;max-width:440px}
+label{font-weight:700;display:grid;gap:6px}
+.msg{font-weight:700;color:var(--bl);min-height:1.6em}
+.tg{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;background:#229ed9;color:#fff;border-radius:999px;padding:12px 20px;font-weight:700;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+footer{padding:28px 0 80px;color:var(--mu);border-top:1px solid var(--ln)}
+.tl{position:fixed;pointer-events:none;font:800 22px var(--hd);color:var(--bl);z-index:30;animation:tl .9s forwards}
+@keyframes tl{to{opacity:0;transform:translateY(24px) rotate(25deg)}}
+#cf{position:fixed;inset:0;pointer-events:none;z-index:40}
+@media(max-width:760px){.hero,.g3,.g4{grid-template-columns:1fr}nav a:not(.btn){display:none}.bs{height:300px}.stats{grid-template-columns:1fr 1fr 1fr}}
+.hero>div{position:relative;z-index:1}.hero>.rain{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none}.rain span{position:absolute;top:-40px;font:800 28px var(--hd);color:var(--bl);opacity:.12;animation:rn linear infinite}@keyframes rn{to{transform:translateY(560px)}}
+.sh{animation:sh .4s}@keyframes sh{25%{translate:-8px}75%{translate:8px}}
+.logo span{display:inline-block;animation:lp .5s both}@keyframes lp{from{opacity:0;transform:translateY(-14px) scale(.6)}}
+.lad{display:flex;gap:6px;margin-top:14px}.lad span{flex:1;text-align:center;font:700 13px var(--bd);padding:6px 0;border-radius:8px;background:var(--ln);transition:background .4s}.lad .on{background:var(--bl);color:var(--ob)}
+.sw{touch-action:pan-y;user-select:none;cursor:grab;height:150px;max-width:340px;display:grid;place-items:center;border-radius:20px;background:var(--le);color:#14213d;font:800 34px var(--hd);transition:transform .25s;text-align:center;padding:14px;margin-bottom:14px}
+.ref{background:var(--sf);border:2px dashed var(--bl);border-radius:16px;padding:20px;max-width:540px}.ref code{display:block;padding:10px;background:var(--bg);border-radius:10px;margin:10px 0;word-break:break-all}.map svg{max-width:100%;border-radius:16px;border:2px solid var(--ln)}
+.stars{font-size:34px;color:#f5b800;letter-spacing:4px;margin-top:10px}.stars span{display:inline-block;animation:st .5s both}.stars .off{color:var(--ln)}@keyframes st{from{transform:scale(0) rotate(-90deg)}}
+.pay{margin-top:18px}#jt{display:block;overflow-x:auto}.cab-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.cab-grid b{font:800 30px var(--hd);color:var(--bl)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="w">
+<header><a class="logo" href="#" id="lo" aria-label="Lingvo">Lingvo</a>
+<nav><a href="#daraja" data-t="n1"></a><a href="#jadval" data-t="n2"></a><a href="#faq" data-t="n3"></a>
+<button class="btn s o" id="th" aria-label="Theme">◐</button><button class="btn s o" id="lg" aria-label="Til / Язык">RU</button><a class="btn s" href="#sinov" data-t="cta"></a></nav></header>
+<div class="hero"><div class="rain" id="rn" aria-hidden="true"></div><div>
+<h1 data-t="h1"></h1><div class="type" id="ty" aria-hidden="true"></div>
+<p data-t="hp"></p><a class="btn" href="#daraja" data-t="hb"></a></div>
+<div class="bs" aria-hidden="true"><div class="bub b1">Hello!<small>English</small></div><div class="bub b2">Привет!<small>Русский</small></div><div class="bub b3">안녕하세요<small>한국어</small></div><div class="bub b4">Salom!<small>O‘zbek</small></div></div></div>
+<div class="stats"><div><b data-n="500" data-s="+">0</b><span data-t="s1"></span></div><div><b data-n="12">0</b><span data-t="s2"></span></div><div><b data-n="8">0</b><span data-t="s3"></span></div></div>
+</div>
+
+<section id="daraja"><div class="w rv"><h2 data-t="t1"></h2><p class="ld" data-t="t2"></p>
+<div class="tabs" id="tabs"></div><div class="test" id="test" aria-live="polite"></div></div></section>
+
+<section id="kurslar"><div class="w rv"><h2 data-t="c1"></h2><div class="g3" id="courses"></div>
+<h2 style="margin-top:44px" data-t="o1"></h2><div class="g4" id="teach"></div></div></section>
+
+<section id="jadval"><div class="w rv"><h2 data-t="j1"></h2>
+<select id="jf" aria-label="Filter"></select><table id="jt"></table></div></section>
+
+<section><div class="w rv"><h2 data-t="d1"></h2><div class="dw" id="dw"></div>
+<h2 style="margin-top:44px" data-t="k1"></h2><p class="ld" data-t="k2"></p><div class="g4" id="cards"></div></div></section>
+
+<section><div class="w rv"><h2 data-t="r0"></h2><div class="car" id="car"></div>
+<div class="cn"><button class="btn s o" id="pv" aria-label="←">←</button><button class="btn s o" id="nx" aria-label="→">→</button></div></div></section>
+
+<section><div class="w rv"><h2 data-t="e1"></h2><p class="ld" data-t="e2"></p><div class="dw" id="ex"></div></div></section>
+<section><div class="w rv"><h2 data-t="w1"></h2><p class="ld" data-t="w2"></p><div id="sg"></div></div></section>
+<section><div class="w rv"><h2 data-t="u1"></h2><div class="dw" id="cab"></div></div></section>
+<section><div class="w rv"><h2 data-t="g1"></h2><p class="ld" data-t="g2"></p><div id="gr"></div></div></section>
+<section id="faq"><div class="w rv"><h2 data-t="f0"></h2>
+<details><summary data-t="fq1"></summary><p data-t="fa1"></p></details>
+<details><summary data-t="fq2"></summary><p data-t="fa2"></p></details>
+<details><summary data-t="fq3"></summary><p data-t="fa3"></p></details>
+<details><summary data-t="fq4"></summary><p data-t="fa4"></p></details></div></section>
+
+<section><div class="w rv"><div class="ref"><h2 data-t="a1"></h2><p data-t="a2"></p><code>lingvo.uz/?ref=DOST10</code><button class="btn s" id="cp" data-t="a3"></button> <span class="msg" id="cm"></span></div>
+<h2 style="margin-top:44px" data-t="m1"></h2><p class="ld" data-t="m2"></p><div class="map"><svg viewBox="0 0 400 200" role="img" aria-label="Map"><rect width="400" height="200" fill="#dfe9f5"/><path d="M0 120H400M150 0V200M290 0L230 200" stroke="#fff" stroke-width="12"/><rect x="170" y="20" width="90" height="60" rx="8" fill="#bdebd3"/><circle cx="150" cy="120" r="14" fill="#2347f5"/><circle cx="150" cy="120" r="5" fill="#fff"/><text x="172" y="126" font-family="sans-serif" font-weight="700" font-size="18" fill="#14213d">Lingvo</text></svg></div><p style="margin-top:14px"><a class="btn s" target="_blank" rel="noopener" href="https://yandex.uz/maps/?text=Lingvo" data-t="mp"></a> <a class="btn s o" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Lingvo">Google Maps</a></p></div></section>
+<section id="sinov"><div class="w rv"><h2 data-t="y1"></h2><p class="ld" data-t="y2"></p>
+<form id="form"><label><span data-t="y3"></span><input name="n" required autocomplete="name"></label>
+<label><span data-t="y4"></span><input name="p" type="tel" required placeholder="+998 90 123 45 67" autocomplete="tel"></label>
+<label><span data-t="y6"></span><select name="c" id="fcs"></select></label><button class="btn" type="submit" data-t="y5"></button><div class="msg" id="msg" aria-live="polite"></div></form><div class="pay"><p data-t="pa"></p><a class="btn s o" href="https://my.click.uz" target="_blank" rel="noopener">Click</a> <a class="btn s o" href="https://payme.uz" target="_blank" rel="noopener">Payme</a></div></div></section>
+
+<footer><div class="w" data-t="ft"></div></footer>
+<a class="tg" href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
+<canvas id="cf"></canvas>
+
+<script>
+const D={uz:{n1:"Daraja testi",n2:"Jadval",n3:"Savollar",cta:"Sinov darsi",h1:"Chet tilini gapirib o‘rganing",hp:"Kichik guruhlar, jonli suhbat darslari va o‘z darajangizga mos dastur. Avval 2 daqiqalik testdan o‘ting.",hb:"Darajamni aniqlash",s1:"talaba",s2:"o‘qituvchi",s3:"yillik tajriba",t1:"Darajangizni aniqlang",t2:"Tilni tanlang va 5 ta savolga javob bering. To‘g‘ri javob darhol ko‘rsatiladi.",c1:"Kurslar",o1:"O‘qituvchilar",yr:"yil tajriba",mo:"oy",j1:"Dars jadvali",all:"Barcha kurslar",c:"Kurs",dy:"Kunlar",tm:"Vaqt",sl:"Bo‘sh o‘rin",d1:"Kunning so‘zi",k1:"So‘zlarni takrorlang",k2:"Kartochkani bosing yoki ustiga boring: tarjimasi chiqadi.",kn:"Bildim",dn:"Bilmadim",ok:"Zo‘r! Ertaga yangi so‘z bo‘ladi.",rp:"Yana ko‘rib chiqamiz.",r0:"Talabalar fikrlari",f0:"Ko‘p so‘raladigan savollar",y1:"Bepul sinov darsiga yoziling",y2:"Ismingiz va telefon raqamingizni qoldiring. Administrator qo‘ng‘iroq qiladi.",y3:"Ismingiz",y4:"Telefon",y5:"Sinov darsiga yozilish",e1:"Tinglab toping",e2:"So‘zni eshiting va to‘g‘ri yozilishini tanlang, so‘ng o‘zingiz ayting.",ls:"Tinglash",sp:"Aytib ko‘rish",nx2:"Keyingi so‘z",nomic:"Brauzeringiz mikrofonni qo‘llamaydi. Chrome’da sinab ko‘ring.",hrd:"Eshitildi: ",gd:"To‘g‘ri!",bd:"Qayta urinib ko‘ring.",w1:"Surib o‘ynang",w2:"So‘zni bilsangiz o‘ngga, bilmasangiz chapga suring.",a1:"Do‘stingizni olib keling",a2:"Do‘stingiz bu kod bilan yozilsa, ikkalangizga 10% chegirma.",a3:"Kodni nusxalash",cd:"Nusxalandi",m1:"Bizni toping",m2:"Manzil: Navoiy ko‘chasi, 12 (namuna). Har kuni 9:00–20:00.",ms:"Xatolar ustida ishlash",dd:"kun ketma-ket",rg:"Yozilish",y6:"Kurs",pa:"To‘lov: Click yoki Payme orqali (havolalar namuna).",mp:"Xaritada ochish",u1:"Mening natijalarim",ut:"Testlar",ul:"Oxirgi daraja",uw:"O‘rganilgan so‘zlar",ue:"Hozircha bo‘sh. Test yoki mashq bajaring. Natijalar shu qurilmada saqlanadi.",g1:"Grammatika mini-darslari",g2:"Qoida va 3 ta mashq. Mashqlar ingliz tilida.",rq:"Qayta ko‘rish",ft:"Lingvo til o‘rganish markazi. Har kuni 9:00–20:00.",thx:"Rahmat",thx2:"Tez orada bog‘lanamiz.",lv:"Sizning darajangiz",of:"dan",right:"to‘g‘ri",again:"Qayta boshlash",nm:"Ismingiz",mk:"Sertifikat yaratish",ce:"Natija sertifikati",rt:"Qayta urinish",
+r1:"Uch oyda IELTS 5.5 dan 7.0 ga chiqdim. Guruh juda yaxshi.",r2:"Rus tilini noldan boshladim, endi ishda erkin gaplashaman.",r3:"Koreys tili darslari qiziqarli, TOPIKga tayyorlanyapman.",
+fq1:"Sinov darsi pullikmi?",fa1:"Yo‘q, birinchi dars bepul.",fq2:"Guruhda necha kishi bo‘ladi?",fa2:"6 tadan 8 tagacha.",fq3:"Onlayn o‘qish mumkinmi?",fa3:"Ha, Zoom orqali jonli darslar bor.",fq4:"Qanday to‘lanadi?",fa4:"Har oy boshida, naqd yoki karta orqali."},
+ru:{n1:"Тест уровня",n2:"Расписание",n3:"Вопросы",cta:"Пробный урок",h1:"Говорите на языке с первого урока",hp:"Маленькие группы, живая речь и программа под ваш уровень. Сначала пройдите тест за 2 минуты.",hb:"Узнать уровень",s1:"студентов",s2:"преподавателей",s3:"лет опыта",t1:"Узнайте свой уровень",t2:"Выберите язык и ответьте на 5 вопросов. Правильный ответ показывается сразу.",c1:"Курсы",o1:"Преподаватели",yr:"лет опыта",mo:"мес.",j1:"Расписание занятий",all:"Все курсы",c:"Курс",dy:"Дни",tm:"Время",sl:"Свободно мест",d1:"Слово дня",k1:"Повторите слова",k2:"Нажмите на карточку или наведите курсор: появится перевод.",kn:"Знаю",dn:"Не знаю",ok:"Отлично! Завтра будет новое слово.",rp:"Повторим ещё раз.",r0:"Отзывы студентов",f0:"Частые вопросы",y1:"Запишитесь на бесплатный пробный урок",y2:"Оставьте имя и телефон. Администратор вам позвонит.",y3:"Ваше имя",y4:"Телефон",y5:"Записаться на пробный урок",e1:"Послушайте и найдите",e2:"Послушайте слово и выберите правильное написание, затем произнесите его сами.",ls:"Слушать",sp:"Произнести",nx2:"Следующее слово",nomic:"Ваш браузер не поддерживает микрофон. Попробуйте Chrome.",hrd:"Услышано: ",gd:"Верно!",bd:"Попробуйте ещё раз.",w1:"Свайп-игра",w2:"Знаете слово – свайп вправо, не знаете – влево.",a1:"Приведите друга",a2:"Если друг запишется с этим кодом, вам обоим скидка 10%.",a3:"Скопировать код",cd:"Скопировано",m1:"Как нас найти",m2:"Адрес: ул. Навои, 12 (пример). Ежедневно 9:00–20:00.",ms:"Работа над ошибками",dd:"дней подряд",rg:"Записаться",y6:"Курс",pa:"Оплата через Click или Payme (ссылки ориентировочные).",mp:"Открыть на карте",u1:"Мои результаты",ut:"Тестов пройдено",ul:"Последний уровень",uw:"Выучено слов",ue:"Пока пусто. Пройдите тест или упражнение. Результаты хранятся на этом устройстве.",g1:"Мини-уроки грамматики",g2:"Правило и 3 упражнения. Упражнения на английском.",rq:"Повторить",ft:"Языковой центр Lingvo. Ежедневно 9:00–20:00.",thx:"Спасибо",thx2:"Мы скоро свяжемся с вами.",lv:"Ваш уровень",of:"из",right:"верно",again:"Начать заново",nm:"Ваше имя",mk:"Создать сертификат",ce:"Сертификат результата",rt:"Пройти снова",
+r1:"За три месяца поднял IELTS с 5.5 до 7.0. Отличная группа.",r2:"Начала русский с нуля, теперь свободно говорю на работе.",r3:"Уроки корейского интересные, готовлюсь к TOPIK.",
+fq1:"Пробный урок платный?",fa1:"Нет, первый урок бесплатный.",fq2:"Сколько человек в группе?",fa2:"От 6 до 8.",fq3:"Можно учиться онлайн?",fa3:"Да, есть живые уроки в Zoom.",fq4:"Как оплачивать?",fa4:"В начале месяца, наличными или картой."}};
+let lang='uz';const t=k=>D[lang][k],$=s=>document.querySelector(s);
+const TY=["Hello!","Привет!","안녕하세요!","Salom!"];
+const TS={en:{n:"English",q:[["She ___ to school every day.",["go","goes","going"],1],["I ___ a movie when you called.",["watched","was watching","watch"],1],["If it rains, we ___ at home.",["stay","stayed","will stay"],2],["He has lived here ___ 2019.",["for","since","from"],1],["The report ___ by the manager yesterday.",["was written","wrote","has write"],0]]},
+ru:{n:"Русский",q:[["Я ___ в школу каждый день.",["хожу","ходит","идёшь"],0],["Вчера мы ___ в кино.",["идём","ходили","пойдём"],1],["У меня нет ___.",["время","времени","временем"],1],["Книга лежит ___ столе.",["на","в","к"],0],["Если бы я знал, я ___ бы раньше.",["пришёл","приду","прихожу"],0]]},
+ko:{n:"한국어",q:[["저는 학생___.",["이에요","가","을"],0],["어제 친구를 ___.",["만나요","만났어요","만날 거예요"],1],["책을 ___ 있어요.",["읽고","읽는","읽어"],0],["물을 마시___ 싶어요.",["고","면","지만"],0],["비가 ___ 우산을 가져가세요.",["오면","오고","와서"],0]]}};
+const LV=["A1","A2","B1","B2","C1","C1"];
+const CRS=[["English",["Du Cho Ju","18:00–19:30"],5],["English",["Se Pa Sh","10:00–11:30"],2],["Русский",["Du Cho Ju","16:00–17:30"],4],["Русский",["Se Pa Sh","12:00–13:30"],6],["한국어",["Du Cho Ju","19:30–21:00"],3],["한국어",["Sha Yak","11:00–12:30"],1]];
+const PR=[["English",450],["Русский",400],["한국어",500]];
+const TC=[["Madina A.","English","IELTS 8.0",7],["Sergey K.","Русский","TKT",10],["Jiyeon P.","한국어","TOPIK 6",5]];
+const WD=[["Journey","Safar","She loves a long journey."],["Friend","Do‘st","He is my best friend."],["Window","Deraza","Open the window, please."]];
+const FC=[["Hello","Salom"],["Thank you","Rahmat"],["Book","Kitob"],["Water","Suv"],["Home","Uy"],["Friend","Do‘st"]];
+const RV=[["Aziza","IELTS 5.5 → 7.0","r1"],["Dilnoza","A0 → B1","r2"],["Bekzod","TOPIK 2","r3"]];
+let tl='en',qi=0,sc=0,ci=0,wi=new Date().getDate()%WD.length,miss=[],ei=0,sw=0,si=0;
+function tx(){document.documentElement.lang=lang;document.querySelectorAll('[data-t]').forEach(e=>e.textContent=t(e.dataset.t));$('#lg').textContent=lang==='uz'?'RU':'UZ';
+ renderAll();}
+function renderAll(){tabs();test();courses();sched();word();cards();car();exr();sgr();cab();gr();}
+function tabs(){$('#tabs').innerHTML=Object.keys(TS).map(k=>'<button class="btn '+(k===tl?'on':'')+'" data-k="'+k+'">'+TS[k].n+'</button>').join('');
+ document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>{tl=b.dataset.k;qi=0;sc=0;tabs();test()})}
+function test(){const T=$('#test'),Q=TS[tl].q;if(qi===0){miss=[];saved=0}
+ if(qi>=Q.length){const lv=LVL[lvi()];savT(lv);
+  T.innerHTML='<div class="rs"><div class="ring"><svg viewBox="0 0 100 100"><circle class="tr" cx="50" cy="50" r="45"/><circle class="fg" id="fg" cx="50" cy="50" r="45"/></svg><b>'+lv+'</b></div><div><div class="q">'+t('lv')+': '+lv+'</div><p>'+sc+' '+t('of')+' '+Q.length+' '+t('right')+'</p><button class="btn s" id="re">'+t('rt')+'</button></div></div>'+LAD()+'<div style="margin-top:16px"><input id="cn" placeholder="'+t('nm')+'"> <button class="btn s" id="mk">'+t('mk')+'</button></div><div id="ce"></div>';
+  setTimeout(()=>$('#fg').style.strokeDashoffset=283-283*sc/Q.length,50);
+  
+  $('#re').onclick=()=>{qi=0;sc=0;test()};
+  $('#mk').onclick=()=>{const n=$('#cn').value.trim();if(!n)return;$('#ce').innerHTML='<div class="cert"><p>'+t('ce')+'</p><h3>'+n.replace(/</g,'&lt;')+'</h3><p>'+TS[tl].n+' · '+lv+' · '+new Date().toLocaleDateString(lang==='uz'?'uz-UZ':'ru-RU')+'</p></div>'};return}
+ const q=Q[qi];
+ T.innerHTML='<div class="pg"><i style="width:'+qi/Q.length*100+'%"></i></div><div class="q">'+q[0]+'</div>'+q[1].map((o,k)=>'<button class="opt" data-k="'+k+'">'+o+'</button>').join('');
+ T.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{const k=+b.dataset.k;T.querySelectorAll('.opt').forEach(x=>{x.disabled=true;if(+x.dataset.k===q[2])x.classList.add('ok')});if(k===q[2]){sc++;ding(1)}else{b.classList.add('no','sh');ding(0);miss.push([q[0],q[1][q[2]]])}setTimeout(()=>{qi++;test()},900)})}
+function courses(){$('#courses').innerHTML=PR.map(p=>'<div class="cs"><h3>'+p[0]+'</h3><p class="price"><b>'+p[1]+' 000</b> / '+t('mo')+'</p></div>').join('');
+ $('#teach').innerHTML=TC.map(c=>'<button class="fl"><div class="fi"><div>'+c[0]+'<br>'+c[1]+'</div><div>'+c[2]+'<br>'+c[3]+' '+t('yr')+'</div></div></button>').join('');
+ document.querySelectorAll('.fl').forEach(f=>f.onclick=()=>f.classList.toggle('on'));reveal()}
+function sched(){const f=$('#jf'),cur=f.value||'';f.innerHTML='<option value="">'+t('all')+'</option>'+PR.map(p=>'<option>'+p[0]+'</option>').join('');f.value=cur;f.onchange=sched;
+ $('#jt').innerHTML='<tr><th>'+t('c')+'</th><th>'+t('dy')+'</th><th>'+t('tm')+'</th><th>'+t('sl')+'</th><th></th></tr>'+CRS.filter(r=>!f.value||r[0]===f.value).map(r=>'<tr><td>'+r[0]+'</td><td>'+DY(r[1][0])+'</td><td>'+r[1][1]+'</td><td class="sp">'+r[2]+'</td><td><button class="btn s" data-c="'+r[0]+'">'+t('rg')+'</button></td></tr>').join('')}
+function word(msg){const w=WD[wi];$('#dw').innerHTML='<p class="sc">'+STR()+'</p><h3>'+w[0]+'</h3><p><b>'+w[1]+'</b><br><i>'+w[2]+'</i></p>'+(msg?'<p class="msg">'+msg+'</p>':'<button class="btn s" id="kn">'+t('kn')+'</button> <button class="btn s o" id="dn">'+t('dn')+'</button>');
+ if(!msg){$('#kn').onclick=()=>{streak();addW();word(t('ok'))};$('#dn').onclick=()=>{streak();cab();word(t('rp'))}}}
+function cards(){$('#cards').innerHTML=FC.map(c=>'<button class="fl"><div class="fi"><div>'+c[0]+'</div><div>'+c[1]+'</div></div></button>').join('');document.querySelectorAll('#cards .fl').forEach(f=>f.onclick=()=>f.classList.toggle('on'))}
+function car(){const r=RV[ci];$('#car').innerHTML='<blockquote>'+t(r[2])+'</blockquote><div><b>'+r[0]+'</b> · <span class="sc">'+r[1]+'</span></div>'}
+$('#pv').onclick=()=>{ci=(ci+RV.length-1)%RV.length;car()};$('#nx').onclick=()=>{ci=(ci+1)%RV.length;car()};
+setInterval(()=>{ci=(ci+1)%RV.length;car()},7000);
+$('#lg').onclick=()=>{lang=lang==='uz'?'ru':'uz';tx()};
+$('#form').onsubmit=e=>{e.preventDefault();$('#msg').textContent=t('thx')+', '+e.target.n.value.trim()+'! '+t('thx2');e.target.reset()};
+/* typing */
+let ti=0,tc=0,del=false;const ty=$('#ty');
+(function tick(){const w=TY[ti];tc+=del?-1:1;ty.textContent=w.slice(0,tc);let d=del?60:110;if(!del&&tc===w.length){del=true;d=1200}else if(del&&tc===0){del=false;ti=(ti+1)%TY.length;d=300}setTimeout(tick,d)})();
+/* reveal + counters */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+function reveal(){document.querySelectorAll('.rv:not(.in)').forEach(e=>io.observe(e));document.querySelectorAll('.cs').forEach((e,i)=>{e.classList.add('rv');e.style.transitionDelay=i*.15+'s';io.observe(e)})}
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;co.unobserve(e.target);const n=+e.target.dataset.n,s=e.target.dataset.s||'';let k=0;const id=setInterval(()=>{k+=Math.ceil(n/40);if(k>=n){k=n;clearInterval(id)}e.target.textContent=k+s},35)}));
+document.querySelectorAll('[data-n]').forEach(e=>co.observe(e));
+/* cursor letters */
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(!reduce&&matchMedia('(pointer:fine)').matches){let last=0;const LT="ABCDЯБВГ가나다Aa";document.addEventListener('mousemove',e=>{const n=Date.now();if(n-last<90)return;last=n;const s=document.createElement('span');s.className='tl';s.textContent=LT[Math.floor(Math.random()*LT.length)];s.style.left=e.clientX+8+'px';s.style.top=e.clientY+8+'px';document.body.appendChild(s);setTimeout(()=>s.remove(),900)})}
+/* confetti */
+function boom(){if(reduce)return;const c=$('#cf'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;const P=Array.from({length:90},()=>({x:c.width/2,y:c.height/2,vx:(Math.random()-.5)*14,vy:Math.random()*-14-2,r:Math.random()*6+3,c:['#2347f5','#ffd84d','#2fbf84','#ff6b6b'][Math.floor(Math.random()*4)]}));let f=0;(function a(){x.clearRect(0,0,c.width,c.height);P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.35;x.fillStyle=p.c;x.fillRect(p.x,p.y,p.r,p.r)});if(++f<110)requestAnimationFrame(a);else x.clearRect(0,0,c.width,c.height)})()}
+/* sound */
+function ding(ok){try{const a=new(window.AudioContext||window.webkitAudioContext)(),o=a.createOscillator(),g=a.createGain();o.frequency.value=ok?880:220;o.connect(g);g.connect(a.destination);g.gain.setValueAtTime(.15,a.currentTime);g.gain.exponentialRampToValueAtTime(.001,a.currentTime+.3);o.start();o.stop(a.currentTime+.3)}catch(e){}}
+/* ladder + mistakes */
+function LAD(){return '<div class="lad">'+['A1','A2','B1','B2','C1'].map((l,i)=>'<span class="'+(i<=Math.min(sc,4)?'on':'')+'">'+l+'</span>').join('')+'</div>'+(miss.length?'<h3 style="margin-top:16px">'+t('ms')+'</h3>'+miss.map(m=>'<p>'+m[0]+' → <b>'+m[1]+'</b></p>').join(''):'')}
+/* streak */
+function gs(){try{return JSON.parse(localStorage.getItem('lg')||'{}')}catch(e){return{}}}
+function streak(){try{const d=new Date().toDateString(),s=gs();if(s.d!==d){s.n=s.d===new Date(Date.now()-864e5).toDateString()?(s.n||0)+1:1;s.d=d;localStorage.setItem('lg',JSON.stringify(s))}}catch(e){}}
+function STR(){return '🔥 '+(gs().n||0)+' '+t('dd')}
+/* listening + speaking */
+const EX=['journey','friend','window','water','book','home'];
+function say(w){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(w);u.lang='en-US';speechSynthesis.speak(u)}catch(e){}}
+function exr(){const w=EX[ei%6],o=[0,2,4].map(k=>EX[(ei+k)%6]).sort();
+ $('#ex').innerHTML='<button class="btn s" id="ls">🔊 '+t('ls')+'</button> <button class="btn s o" id="sp">🎤 '+t('sp')+'</button><div style="margin-top:14px">'+o.map(x=>'<button class="opt" data-w="'+x+'">'+x+'</button>').join('')+'</div><p class="msg" id="em"></p><button class="btn s o" id="en">'+t('nx2')+'</button>';
+ $('#ls').onclick=()=>say(w);$('#en').onclick=()=>{ei++;exr()};
+ document.querySelectorAll('#ex .opt').forEach(b=>b.onclick=()=>{const ok=b.dataset.w===w;ding(ok);b.classList.add(ok?'ok':'no');if(!ok)b.classList.add('sh');$('#em').textContent=ok?t('gd'):t('bd')});
+ $('#sp').onclick=()=>{const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){$('#em').textContent=t('nomic');return}try{const r=new SR();r.lang='en-US';r.onresult=e=>{const h=e.results[0][0].transcript.toLowerCase(),ok=h.includes(w);ding(ok);$('#em').textContent=ok?t('gd'):t('hrd')+h+'. '+t('bd')};r.onerror=()=>{$('#em').textContent=t('nomic')};r.start()}catch(e){$('#em').textContent=t('nomic')}}}
+/* swipe game */
+function sgr(){const el=$('#sg');if(si>=FC.length){el.innerHTML='<p class="q">'+sw+' / '+FC.length+' ✓</p><button class="btn s" id="sr">'+t('rt')+'</button>';$('#sr').onclick=()=>{si=0;sw=0;sgr()};return}
+ el.innerHTML='<div class="sw" id="sk">'+FC[si][0]+'</div><button class="btn s o" id="sn">✕ '+t('dn')+'</button> <button class="btn s" id="sy">✓ '+t('kn')+'</button>';
+ const c=$('#sk');let x0=null,dx=0;const go=k=>{if(k)sw++;si++;ding(k);sgr()};
+ c.onpointerdown=e=>{x0=e.clientX;c.setPointerCapture(e.pointerId);c.style.transition='none'};
+ c.onpointermove=e=>{if(x0===null)return;dx=e.clientX-x0;c.style.transform='translateX('+dx+'px) rotate('+dx/12+'deg)'};
+ c.onpointerup=()=>{if(x0===null)return;x0=null;c.style.transition='';if(Math.abs(dx)>80)go(dx>0);else c.style.transform='';dx=0};
+ $('#sn').onclick=()=>go(0);$('#sy').onclick=()=>go(1)}
+/* theme, referral, logo, rain, parallax */
+$('#th').onclick=()=>{const r=document.documentElement,d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=d?'light':'dark'};
+$('#cp').onclick=()=>{const c='lingvo.uz/?ref=DOST10';try{navigator.clipboard.writeText(c).then(()=>$('#cm').textContent=t('cd'),()=>$('#cm').textContent=c)}catch(e){$('#cm').textContent=c}};
+$('#lo').innerHTML=[...'Lingvo'].map((c,i)=>'<span style="animation-delay:'+i*.12+'s">'+c+'</span>').join('');
+{const RN=$('#rn'),RL='AЯ가BБ나CГ다DЖ라';for(let i=0;i<14;i++){const s=document.createElement('span');s.textContent=RL[i%RL.length];s.style.left=(i*7.3+2)%96+'%';s.style.animationDuration=9+i%5*2+'s';s.style.animationDelay=-(i*1.3)+'s';RN.appendChild(s)}}
+const par=(x,y)=>document.querySelectorAll('.bub').forEach((b,i)=>{b.style.marginLeft=x*(i+1)*14+'px';b.style.marginTop=y*(i+1)*14+'px'});
+{const h=$('.hero');h.addEventListener('mousemove',e=>{const r=h.getBoundingClientRect();par((e.clientX-r.left)/r.width-.5,(e.clientY-r.top)/r.height-.5)});window.addEventListener('deviceorientation',e=>par(Math.max(-1,Math.min(1,(e.gamma||0)/45))/2,Math.max(-1,Math.min(1,((e.beta||45)-45)/45))/2))}
+/* tests: 30 EN, 10 RU, 10 KO */
+let saved=0,SQ=[],MS=[],gi=0;
+TS.en.q=[["I ___ a student.",["am","is","are"],0],["They ___ from Uzbekistan.",["is","are","am"],1],["There ___ two apples on the table.",["is","are","be"],1],["This is ___ umbrella.",["a","an","the"],1],["We ___ breakfast at 8 o’clock.",["has","have","having"],1],["What time ___ it?",["are","is","do"],1],["I like coffee, ___ I don’t like tea.",["but","or","so"],0],["My brother is ___ than me.",["tall","taller","tallest"],1],...TS.en.q,
+["She is the ___ girl in our class.",["smart","smarter","smartest"],2],["I ___ my homework yet.",["didn’t finish","haven’t finished","don’t finish"],1],["He asked me where I ___.",["live","lived","am living"],1],["You ___ smoke here. It is forbidden.",["mustn’t","don’t have to","needn’t"],0],["By next year, I ___ English for five years.",["will study","will have studied","studied"],1],["I wish I ___ more free time.",["have","had","will have"],1],["She suggested ___ to the museum.",["to go","going","go"],1],["The meeting was cancelled ___ the rain.",["because","due to","although"],1],["If I ___ you, I would apologise.",["am","was","were"],2],["He is used to ___ up early.",["get","getting","got"],1],["Neither of the answers ___ correct.",["are","is","were"],1],["I’d rather you ___ here.",["don’t smoke","didn’t smoke","won’t smoke"],1],["Hardly ___ the room when the phone rang.",["he entered","had he entered","he had entered"],1],["She gave up ___ because of her health.",["to run","running","run"],1],["The book, ___ I borrowed, was excellent.",["who","which","what"],1],["It’s high time we ___ home.",["go","went","will go"],1],["Had I known, I ___ differently.",["would act","would have acted","acted"],1]];
+TS.ru.q=[["Это ___ книга.",["мой","моя","моё"],1],["Мы живём ___ городе.",["в","на","к"],0],["Я ___ русский язык.",["изучаю","изучает","изучают"],0],...TS.ru.q,["Я хочу, ___ ты пришёл.",["что","чтобы","как"],1],["Это человек, ___ я говорил вчера.",["о котором","которого","который"],0]];
+TS.ko.q=[["이것은 ___ 입니다.",["책","책을","책에"],0],["저는 한국에 ___.",["살아요","살아서","살고"],0],["오늘은 날씨가 ___.",["좋아요","좋을","좋게"],0],...TS.ko.q,["어제 비가 ___ 집에 있었어요.",["와서","오면","올 때"],0],["시간이 있으면 같이 ___.",["가요","갔어요","가는"],0]];
+const LVL=['A1','A2','B1','B2','C1'];
+const lvi=()=>Math.min(4,Math.floor(sc/TS[tl].q.length*5));
+function LAD(){const n=lvi()+1;return '<div class="stars" aria-label="'+n+'/5">'+[0,1,2,3,4].map(i=>'<span class="'+(i<n?'':'off')+'" style="animation-delay:'+i*.2+'s">★</span>').join('')+'</div><div class="lad">'+LVL.map((l,i)=>'<span class="'+(i<n?'on':'')+'">'+l+'</span>').join('')+'</div>'+(miss.length?'<h3 style="margin-top:16px">'+t('ms')+'</h3>'+miss.map(m=>'<p>'+m[0]+' → <b>'+m[1]+'</b></p>').join(''):'')}
+/* 30 words */
+WD.push(["Apple","Olma","I eat an apple daily."],["Bridge","Ko‘prik","The bridge is old."],["Cheap","Arzon","This bag is cheap."],["Dream","Orzu","Follow your dream."],["Early","Erta","I wake up early."],["Family","Oila","My family is big."],["Garden","Bog‘","They have a garden."],["Happy","Xursand","She is happy today."],["Island","Orol","We visited an island."],["Kitchen","Oshxona","Mum is in the kitchen."],["Learn","O‘rganmoq","I learn new words."],["Market","Bozor","The market opens at 8."],["Night","Tun","The night is quiet."],["Open","Ochmoq","Please open the door."],["Price","Narx","What is the price?"],["Quick","Tez","Take a quick break."],["River","Daryo","The river is wide."],["School","Maktab","School starts in September."],["Teacher","O‘qituvchi","The teacher is kind."],["Under","Ostida","The cat is under the table."],["Village","Qishloq","He grew up in a village."],["Weather","Ob-havo","The weather is nice."],["Young","Yosh","She is young."],["Mountain","Tog‘","We climbed a mountain."],["Library","Kutubxona","I study in the library."],["Breakfast","Nonushta","Breakfast is ready."],["Question","Savol","I have a question."]);
+wi=new Date().getDate()%WD.length;
+/* schedule days + register */
+const DYM={uz:{'Du Cho Ju':'Dushanba, Chorshanba, Juma','Se Pa Sh':'Seshanba, Payshanba, Shanba','Sha Yak':'Shanba, Yakshanba'},ru:{'Du Cho Ju':'Пн, Ср, Пт','Se Pa Sh':'Вт, Чт, Сб','Sha Yak':'Сб, Вс'}};
+const DY=k=>DYM[lang][k]||k;
+$('#fcs').innerHTML=PR.map(p=>'<option>'+p[0]+'</option>').join('');
+$('#jt').addEventListener('click',e=>{const b=e.target.closest('[data-c]');if(!b)return;$('#fcs').value=b.dataset.c;$('#sinov').scrollIntoView({behavior:'smooth'});$('#fcs').focus({preventScroll:true})});
+/* cabinet */
+function P(){try{return JSON.parse(localStorage.getItem('lgp')||'{}')}catch(e){return{}}}
+function SP(o){try{localStorage.setItem('lgp',JSON.stringify(o))}catch(e){}}
+function addW(){const p=P();p.w=(p.w||0)+1;SP(p);cab()}
+function savT(lv){if(saved)return;saved=1;const p=P();p.t=(p.t||0)+1;p.l=lv+' ('+TS[tl].n+')';SP(p);cab()}
+function cab(){const p=P(),s=gs();$('#cab').innerHTML=(p.t||p.w||s.n)?'<div class="cab-grid"><div><b>'+(s.n||0)+'</b><br>'+t('dd')+'</div><div><b>'+(p.t||0)+'</b><br>'+t('ut')+'</div><div><b>'+(p.l||'–')+'</b><br>'+t('ul')+'</div><div><b>'+(p.w||0)+'</b><br>'+t('uw')+'</div></div>':t('ue')}
+/* swipe: random 12 words, replay missed */
+const shuf=a=>a.map(x=>[Math.random(),x]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
+function sgn(q){SQ=q;MS=[];si=0;sw=0;sgr()}
+function sgr(){const el=$('#sg');if(!SQ.length)SQ=shuf(WD).slice(0,12);
+ if(si>=SQ.length){el.innerHTML='<p class="q">'+sw+' / '+SQ.length+' ✓</p><button class="btn s" id="sr">'+t('rt')+'</button> '+(MS.length?'<button class="btn s o" id="sm">'+t('rq')+' ('+MS.length+')</button>':'');$('#sr').onclick=()=>sgn(shuf(WD).slice(0,12));if(MS.length)$('#sm').onclick=()=>sgn(MS.slice());return}
+ el.innerHTML='<div class="sw" id="sk">'+SQ[si][0]+'</div><p class="ld">'+(si+1)+' / '+SQ.length+'</p><button class="btn s o" id="sn">✕ '+t('dn')+'</button> <button class="btn s" id="sy">✓ '+t('kn')+'</button>';
+ const c=$('#sk');let x0=null,dx=0;const go=k=>{if(k){sw++;addW()}else MS.push(SQ[si]);si++;ding(k);sgr()};
+ c.onpointerdown=e=>{x0=e.clientX;c.setPointerCapture(e.pointerId);c.style.transition='none'};
+ c.onpointermove=e=>{if(x0===null)return;dx=e.clientX-x0;c.style.transform='translateX('+dx+'px) rotate('+dx/12+'deg)'};
+ c.onpointerup=()=>{if(x0===null)return;x0=null;c.style.transition='';if(Math.abs(dx)>80)go(dx>0);else c.style.transform='';dx=0};
+ $('#sn').onclick=()=>go(0);$('#sy').onclick=()=>go(1)}
+/* grammar: 5 topics x 3 exercises */
+const G=[['A1','To be: I am, you are, he/she is, we are.',[['She ___ happy.',['is','are'],0],['We ___ ready.',['is','are'],1],['I ___ tired.',['am','is'],0]]],['A2','Past Simple: verb + ed; irregular verbs change (go → went).',[['Yesterday I ___ to school.',['go','went'],1],['She ___ a letter.',['wrote','write'],0],['They ___ football.',['played','play'],0]]],['B1','Present Perfect: have/has + past participle (experience, result).',[['I have never ___ sushi.',['eaten','ate'],0],['She ___ already left.',['has','have'],0],['We have ___ here since 2020.',['lived','live'],0]]],['B2','Second conditional: If + Past Simple, would + verb (unreal present).',[['If I ___ rich, I would travel.',['were','am'],0],['She would help if she ___ time.',['had','has'],0],['If he ___ harder, he would pass.',['studied','studies'],0]]],['C1','Inversion for emphasis: Had I known…, Not only was he…, Rarely have I seen…',[['Had I ___, I would have called.',['known','know'],0],['Not only ___ he late, but also rude.',['was','did'],0],['Rarely ___ such a view.',['have I seen','I have seen'],0]]]];
+function gr(){const g=G[gi];$('#gr').innerHTML='<div class="tabs">'+G.map((x,i)=>'<button class="btn '+(i===gi?'on':'')+'" data-i="'+i+'">'+x[0]+'</button>').join('')+'</div><p class="ld"><b>'+g[1]+'</b></p>'+g[2].map((q,n)=>'<div class="q">'+(n+1)+'. '+q[0]+'</div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">'+q[1].map((o,k)=>'<button class="opt" style="width:auto" data-n="'+n+'" data-k="'+k+'">'+o+'</button>').join('')+'</div>').join('');
+ document.querySelectorAll('#gr .tabs button').forEach(b=>b.onclick=()=>{gi=+b.dataset.i;gr()});
+ document.querySelectorAll('#gr .opt').forEach(b=>b.onclick=()=>{const n=+b.dataset.n,c=g[2][n][2],ok=+b.dataset.k===c;ding(ok);document.querySelectorAll('#gr .opt[data-n="'+n+'"]').forEach(x=>{x.disabled=true;if(+x.dataset.k===c)x.classList.add('ok')});if(!ok)b.classList.add('no','sh')})}
+tx();
+</script>
+</body>
+</html>
